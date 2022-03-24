@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <title>Lab 4</title>
+  </head>
+  <body>
+    <h1>Temperature Conversion Web Tool</h1>
+	  <script>
+          function convertToFAH(celsius)//create convert C to F function with celcius value
+          {
+            var fahrenheit = 0;
+            fahrenheit = (celsius * 9/5) + 32; //The formula to convert the temperature to fahrenheit
+            fahrenheit = Math.round(fahrenheit);//Round t he temperature to a whole number
+            return fahrenheit;//Return the final fahrenheit value
+          }
+          function convertToCEL(fahrenheit)//create convert F to C function with fahrenheit value
+          {
+            var celsius = 0;
+            celsius = (fahrenheit - 32) * 5/9;//The formula to convert the fahrenheit to celsius
+            celsius = Math.round(celsius);//Round t he temperature to a whole number
+            return celsius;//Return the final celsius value
+          }
+          console.log(convertToFAH(23) + "°F");
+          console.log(convertToCEL(32) + "°C")
+          //Gather User Input for temperature value
+          var temperaturevalue = window.prompt("Enter the temperature value you want to convert:");
+          var temperaturevalue = parseInt(temperaturevalue);//convert string to a whole number
+          //Gather User Input for temperature unit they want to convert to
+          var temperatureunit = window.prompt("Enter the temperature unit you want to convert to:\nC for celsius.\nF for fahrenheit\n(Enter 'C' or 'F')");
+          if (temperatureunit == "C")//If the user entered ‘C’
+          {
+              console.log(convertToCEL((temperaturevalue)) + "°C");//call the convertToCEL() function and output the result and unit to the console.
+          }
+          else if (temperatureunit == "F")//If the user entered ‘F’
+          {
+             console.log(convertToFAH((temperaturevalue)) + "°F")//call the convertToFAH() function and output the result and unit to the console
+          }
+      </script>
+  </body>
+</html>
